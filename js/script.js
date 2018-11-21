@@ -37,26 +37,6 @@ function hiUser(username, lvlChances, lvl) {
   $('#lvl').html(lvl.toUpperCase());
 }
 
-// function randomCards() {
-//   var images = ['alce.jpg', 'alce.jpg', 'epelante.jpg', 'epelante.jpg', 'unichancho.jpg', 'unichancho.jpg', 'nena.jpg', 'nena.jpg', 'peces.jpg', 'peces.jpg', 'zapas.jpg', 'zapas.jpg'];
-
-//   //generar cartas
-//   var usedImages = [];
-
-//   var backImg = $('.back').find('img');
-//   for (var i = 0; i < backImg.length; i++) {
-//     var matchIndex = false;
-//     while (matchIndex == false) {
-//       var randomNum = Math.floor((Math.random() * images.length));
-//       if (usedImages.indexOf(randomNum) == -1) {
-//         backImg[i].src = './img/' + images[randomNum];
-//         usedImages.push(randomNum);
-//         matchIndex = true;
-//       }
-//     }
-//   }
-// }
-
 function randomCards() {
   const images = [
     'alce.jpg',
@@ -140,7 +120,6 @@ function saveWinner(username, lvl, actualChance) {
 
   winners.push(winner)
   localStorage.setItem("winners", JSON.stringify(winners))
-  console.log(winners)
 }
 
 function getWinners() {
@@ -150,7 +129,6 @@ function getWinners() {
   if (winners != null) {
     winners.sort((a, b) => (a.chances > b.chances) ? 1 : ((b.chances > a.chances) ? -1 : 0));
     for (var i = 0; i < winners.length; i++) {
-      console.log(winners[i])
       $('#chart-username').append(`<p> ${winners[i].username} </p>`)
       $('#chart-lvl').append(`<p> ${winners[i].lvl} </p>`)
       $('#chart-chances').append(`<p> ${winners[i].chances} </p>`)
@@ -200,13 +178,13 @@ $('.card-flip-container').on('click', function (e) {
           }
         }
 
-        if (actualChance == lvlChances && found < 2) {
+        if (actualChance == lvlChances && found < 6) {
           $('#game').css('pointer-events', 'none');
           setTimeout(function () {
             lostGame();
             getWinners();
           }, 1500)
-        } else if (found == 2) {
+        } else if (found == 6) {
             $('#game').css('pointer-events', 'none');
             setTimeout(function () {
               saveWinner(username, lvl, actualChance);
@@ -226,6 +204,9 @@ $('.card-flip-container').on('click', function (e) {
   }
 });
 
+$('#play-again').on('click', function() {
+  location.reload();
+})
 
 
 
