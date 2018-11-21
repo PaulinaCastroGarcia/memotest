@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Neucha|Pacifico" rel="stylesheet">
+  <link rel="stylesheet" href='css/styles.css'>
+</head>
+<body>
+  <div id="start-game" class="base-game">
+    <h1>Memotest</h1>
+
+    <div class="intro">
+      <p>Hola 👋🏻! Vamos a jugar al Memotest</p>
+      <p>Pero antes de empezar...</p>
+    </div>
+
+    <form id="get-username" action="">
+      <label>Cual es tu nombre ❓</label>
+      <input type="text" id="username" placeholder=" Natalia">
+    </form>
+
+    <div class="choose-lvl">
+      <p>Con que dificultad te gustaria jugar?</p>
+      <div class = 'lvl-btns'>
+        <button id="facil" class="lvl-btn" value="18">FACIL</button>
+        <button id="intermedio" class="lvl-btn" value="12">INTERMEDIO</button>
+        <button id="experto" class="lvl-btn" value="9">EXPERTO</button>
+      </div> 
+    </div>
+
+    <div class="error-username hidden" id="error-username">
+      <p>UPPPS... El nombre es requerido.</p>
+    </div>
+  </div>
+
+  <!-- hidden -->
+  <div class="base-game hidden" id="game">
+    <div class="overlay"></div>
+
+    <div class="above-game">
+      <h1>Memotest</h1>
+
+      <div class="intro" >
+        <p id="hi-username"><!-- Hola username!--></p>
+        <p>Encontra todos los pares en menos de <span id="total-chances"><!--18--></span> intentos</p>
+        <p>Nivel</p>
+        <p id="lvl"><!-- FACIL!--></p>
+      </div>
+  
+      <div id="cards-container">
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="card-flip-container">
+          <div class="front">
+            <img src="img/tapada.jpg" alt="">
+          </div>
+          <div class="back">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+  
+      <div class="chances" id="chances-container">
+        <p>Intentos: <span id="chances-n">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="results-container" class="hidden">
+    <div class="win-lose-container">
+      <p id="lost" class="hidden"> PERDISTE 😬 ! </p>
+      <p class="hidden"><span id="win"> GANASTE! </span> con <span id="win-chances">6</span> intentos</p>
+      <p>Ya podes volver a jugar</p>
+    </div>
+
+    <div class="lvl-btns">
+      <button><a href="index.html">VOLVER A JUGAR</a></button>
+    </div>
+
+    <div class="results-chart">
+      <div class="div-chart" id="chart-username">
+        <span>NOMBRE</span>
+      </div>
+      <div class="div-chart" id="chart-lvl">
+        <span>NIVEL</span>
+      </div>
+      <div class="div-chart" id="chart-chances">
+        <span>INTENTOS</span>
+      </div>
+    </div>
+
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+.hidden {
+  display: none;
+}
+
+body {
+  background-image: url(../img/fondo.jpg);
+  box-sizing: border-box;
+}
+
+#start-game {
+  width: 80%;
+  margin: 0 auto;
+  border: 12px solid black;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #f9e9df;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 3% 1%;
+}
+#start-game h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 42px;
+  color: #42afd6;
+  margin: 0;
+}
+#start-game div {
+  width: 70%;
+  margin: 0 auto;
+}
+#start-game p, #start-game label {
+  width: 80%;
+  font-family: "Neucha", cursive;
+  margin: 0 auto;
+  display: block;
+}
+#start-game #get-username input {
+  width: 60%;
+  padding: 6px;
+  margin: 10px 0;
+  font-family: "Neucha", cursive;
+  font-size: 18px;
+}
+#start-game #get-username input:focus {
+  outline: 3px solid hotpink;
+  box-shadow: 0 0 3px hotpink;
+}
+
+.lvl-btns {
+  width: 100%;
+}
+.lvl-btns button {
+  background-color: #FF9801;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  margin-top: 12px;
+  font-family: "Neucha", cursive;
+  color: white;
+  letter-spacing: 3px;
+}
+.lvl-btns button:hover {
+  background-color: #fdaf39;
+  cursor: pointer;
+}
+.lvl-btns button:focus {
+  outline: 3px solid hotpink;
+  box-shadow: 0 0 3px hotpink;
+}
+
+#start-game .error-username {
+  margin-top: 12px;
+  background-color: #e9c4c3;
+  color: #a94442;
+  border-radius: 6px;
+  padding: 6px 0;
+}
+
+#game {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  border: 12px solid black;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 3% 1%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f9e9df;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.above-game {
+  position: relative;
+  z-index: 3;
+}
+.above-game h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 42px;
+  color: #42afd6;
+  margin: 0;
+}
+.above-game p {
+  font-family: "Neucha", cursive;
+  font-size: 18px;
+  margin: 0;
+  display: block;
+}
+.above-game #total-chances {
+  color: #42afd6;
+}
+.above-game .chances {
+  background-color: white;
+  border: 3px solid #42afd6;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 6px 0;
+}
+.above-game .chances #chances-n {
+  color: #FF9801;
+}
+
+#cards-container {
+  margin: 9px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+#cards-container .card-flip-container {
+  max-width: 29%;
+  position: relative;
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  margin: 2%;
+}
+#cards-container .card-flip-container:hover {
+  box-shadow: -3px 3px 6px #5f5f5f;
+}
+#cards-container .card-flip-container img {
+  max-width: 100%;
+  display: block;
+}
+#cards-container .card-flip-container .front {
+  backface-visibility: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotateY(0deg);
+  border: 1.5px solid #FF9801;
+}
+#cards-container .card-flip-container .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  border: 1.5px solid #FF9801;
+  transition: 0.8s;
+}
+
+.rotar {
+  transform: rotateY(180deg);
+}
+
+.grayscale {
+  transition: all 1s ease-in-out;
+  filter: grayscale(100%);
+}
+
+#results-container {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 80%;
+  margin: 0 auto;
+  border: 12px solid black;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #f9e9df;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 3% 1%;
+  border: 6px solid black;
+  width: 50%;
+  min-height: 20%;
+}
+#results-container .win-lose-container p {
+  font-family: "Neucha", cursive;
+  margin: 0;
+}
+#results-container .lvl-btns button {
+  width: 50%;
+}
+#results-container .lvl-btns button a {
+  text-decoration: none;
+  color: white;
+}
+
+.results-chart {
+  margin-top: 12px;
+  display: flex;
+}
+.results-chart .div-chart {
+  width: 33%;
+  border: 1px solid black;
+}
+.results-chart .div-chart span {
+  font-family: "Neucha", cursive;
+  font-size: 12px;
+}
+.results-chart .div-chart p {
+  font-size: 11px;
+}
+
+@media (min-width: 800px) {
+  #start-game {
+    padding: 1%;
+    width: 30%;
+  }
+  #start-game div {
+    width: 90%;
+  }
+  #start-game #get-username input {
+    width: 80%;
+  }
+
+  #game {
+    padding: 1%;
+  }
+
+  #cards-container {
+    width: 50%;
+  }
+  #cards-container .card-flip-container {
+    max-width: 21%;
+    margin: 0.6%;
+  }
+
+  #results-container {
+    width: 21%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
