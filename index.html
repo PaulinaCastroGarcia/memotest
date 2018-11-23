@@ -9,7 +9,7 @@
   <link rel="stylesheet" href='css/styles.css'>
 </head>
 <body>
-  <div id="start-game" class="base-game">
+  <section id="start-game" class="base-game">
     <h1>Memotest</h1>
 
     <div class="intro">
@@ -19,7 +19,7 @@
 
     <form id="get-username" action="">
       <label>Cuál es tu nombre ❓</label>
-      <input type="text" id="username" placeholder=" Natalia">
+      <input type="text" id="username" placeholder=" Pau">
     </form>
 
     <div class="choose-lvl">
@@ -34,10 +34,13 @@
     <div class="error-username hidden" id="error-username">
       <p>UPPPS... El nombre es requerido.</p>
     </div>
-  </div>
 
-  <!-- hidden -->
-  <div class="base-game hidden" id="game">
+    <div class="error-username hidden" id="error-username-letters">
+      <p>UPPPS... Ingresá máximo 9 letras.</p>
+    </div>
+  </section>
+
+  <section class="base-game hidden" id="game">
     <div class="overlay"></div>
 
     <div class="above-game">
@@ -52,100 +55,52 @@
   
       <div id="cards-container">
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
         <div class="card-flip-container">
-          <div class="front">
-            <img src="img/tapada.jpg" alt="">
-          </div>
-          <div class="back">
-            <img src="" alt="">
-          </div>
+          <div class="front"><img src="img/tapada.jpg" alt=""></div>
+          <div class="back"><img src="" alt=""></div>
         </div>
       </div>
   
@@ -153,9 +108,9 @@
         <p>Intentos: <span id="chances-n">0</span></p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="results-container" class="hidden">
+  <section id="results-container" class="hidden">
     <div class="win-lose-container">
       <p id="lost" class="hidden"> PERDISTE 😬 ! </p>
       <p class="hidden"><span id="win"> GANASTE! </span> con <span id="win-chances">6</span> intentos</p>
@@ -177,8 +132,7 @@
         <span>INTENTOS</span>
       </div>
     </div>
-
-  </div>
+  </section>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/script.js"></script>

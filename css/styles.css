@@ -59,10 +59,12 @@ body {
   font-family: "Neucha", cursive;
   color: white;
   letter-spacing: 3px;
+  transition: all 0.3s ease-in-out;
 }
 .lvl-btns button:hover {
   background-color: #fdaf39;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .lvl-btns button:focus {
   outline: 3px solid hotpink;
@@ -160,6 +162,9 @@ body {
   z-index: 1;
   transform: rotateY(0deg);
   border: 1.5px solid #FF9801;
+}
+#cards-container .card-flip-container .front:hover {
+  cursor: pointer;
 }
 #cards-container .card-flip-container .back {
   backface-visibility: hidden;
