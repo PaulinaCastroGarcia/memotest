@@ -1,9 +1,26 @@
-@mixin focus {
-  outline: 3px solid hotpink;
-  box-shadow: 0 0 3px hotpink;
+body {
+  background-image: url(../img/fondo.jpg);
+  box-sizing: border-box;
+  font-family: 'Neucha', cursive;
 }
 
-@mixin base {
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 42px;
+  color: #42afd6;
+  margin: 0;
+}
+
+#start-game, #game, #results-container {
   width: 80%;
   margin: 0 auto;
   border: 12px solid black;
@@ -15,61 +32,37 @@
   padding: 3% 1%;
 }
 
-@mixin memotest {
-  font-family: 'Pacifico', cursive;
-  font-size: 42px;
-  color: #42afd6;
-  margin: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-body {
-  background-image: url(../img/fondo.jpg);
-  box-sizing: border-box;
+input:focus, button:focus  {
+  outline: 3px solid hotpink;
+  box-shadow: 0 0 3px hotpink;
 }
 
 #start-game {
-  @include base;
-  h1 {
-    @include memotest;
-  }
-  div {
-    width: 70%;
+  div, p, label {
     margin: 0 auto;
   }
   p, label {
     width: 80%;
-    font-family: 'Neucha', cursive;
-    margin: 0 auto;
-    display: block;
   }
   #get-username {
     input {
-      width: 60%;
+      width: 70%;
       padding: 6px;
       margin: 10px 0;
-      font-family: 'Neucha', cursive; 
-      font-size: 18px;
-    }
-    input:focus {
-      @include focus;
     }
   }
 }
 
 .lvl-btns {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   button {
-    background-color: #FF9801;
     width: 100%;
+    margin-top: 12px;
+    padding: 10px 0;
+    background-color: #FF9801;
     border: none;
     border-radius: 6px;
-    padding: 10px 0;
-    margin-top: 12px;
-    font-family: 'Neucha', cursive; 
     color: white;
     letter-spacing: 3px;
     transition: all 0.3s ease-in-out;
@@ -79,30 +72,19 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
-  button:focus {
-    @include focus;
-  }
 }
 
 #start-game .error-username {
+  width: 90%;
   margin-top: 12px;
+  padding: 10px 0;
+  border-radius: 6px;
   background-color: #e9c4c3;
   color: #a94442;
-  border-radius: 6px;
-    // font-size: 12px;
-  padding: 6px 0;
 }
 
 #game {
-  width: 80%;
-  margin: 0 auto;
   position: relative;
-  border: 12px solid black;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-  padding: 3% 1%;
 }
 
 .overlay {
@@ -111,34 +93,25 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-
   background-color: #f9e9df;
   opacity: 0.8;
-  z-index: 2;
 }
 
 .above-game {
   position: relative;
-  z-index: 3;
-  h1 {
-    @include memotest;
-  }
   p {
-    font-family: 'Neucha', cursive;
-    font-size: 18px;
     margin: 0;
-    display: block;
   }
   #total-chances {
     color: #42afd6;
   }
   .chances {
-    background-color: white;
-    border: 3px solid #42afd6;
-    border-radius: 5px;
     width: 50%;
     margin: 0 auto;
     padding: 6px 0;
+    background-color: white;
+    border: 3px solid #42afd6;
+    border-radius: 5px;
     #chances-n {
       color: #FF9801;
     }
@@ -146,19 +119,17 @@ body {
 }
 
 #cards-container {
-  // width: 90%;
   margin: 9px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-around;
-  // background-color: lightblue;
   .card-flip-container {
     max-width: 29%;
+    margin: 2%;
     position: relative;
     transition: 0.8s;
     transform-style: preserve-3d;
-    margin: 2%;
     &:hover {
       box-shadow: -3px 3px 6px rgb(95, 95, 95);
     }
@@ -166,27 +137,20 @@ body {
       max-width:	100%;
       display:block;
     }
-    .front{
+    .front, .back {
       backface-visibility: hidden;
       position: relative;
       top: 0;
       left: 0;
-      z-index: 1;
       transform: rotateY(0deg);
       border: 1.5px solid #FF9801;
-      &:hover {
-        cursor: pointer;
-      }
     }
-    
-    .back{
-      backface-visibility: hidden;
+    .front:hover {
+      cursor: pointer;
+    }
+    .back {
       position: absolute;
-      top: 0;
-      left: 0;
       transform: rotateY(180deg);
-      border: 1.5px solid #FF9801;
-      transition: 0.8s;
     }
   }
 }
@@ -201,67 +165,35 @@ body {
 }
 
 #results-container {
+  width: 80%;
+  min-height: 20%;
   position: absolute;
   top: 8px;
   left: 0;
   right: 0;
-  z-index: 5;
-  @include base;
   border: 6px solid black;
-  width: 50%;
-  min-height: 20%;
   .win-lose-container {
     p {
-      font-family: 'Neucha', cursive;
       margin: 0;
-    }
-  }
-  .lvl-btns {
-    button {
-      width: 50%;
-      a {
-        text-decoration: none;
-        color: white;
-
-      }
     }
   }
 }
 
 .results-chart {
-  margin-top: 12px;
+  width: 90%;
+  margin: 12px auto 0;
   display: flex;
   .div-chart {
     width: 33%;
     border: 1px solid black;
-    span {
-      font-family: 'Neucha', cursive;
-      font-size: 12px;
-    }
-    p {
-      font-size: 11px;
-    }
   }
 }
 
 @media (min-width: 800px) {
   #start-game {
-    padding: 1%;
     width: 30%;
-    div {
-      width: 90%;
-    }
-    #get-username {
-      input {
-        width: 80%;
-      }
-    }
   }
 
-  #game {
-    padding: 1%;
-  }
-    
   #cards-container {
     width: 50%;
     .card-flip-container {
@@ -271,8 +203,6 @@ body {
   }
 
   #results-container {
-    width: 21%;
+    width: 38%;
   }
 }
-
-

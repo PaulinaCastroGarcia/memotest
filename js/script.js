@@ -46,7 +46,6 @@ function validateUsername(username) {
         $('#error-username-letters').addClass('hidden')
       }, 1500)
   } else if (username.length <= 9) {
-      console.log(username.length)
       $('#start-game').addClass('hidden')
       $('#game').removeClass('hidden')
 
@@ -88,6 +87,8 @@ function foundCard(card1, card2) {
   card1.container.children('.back').css('border-color', '#979797')
   card2.container.children('.back').children('img').addClass('grayscale')
   card2.container.children('.back').css('border-color', '#979797')
+  card1.container.css('pointer-events', 'none')
+  card2.container.css('pointer-events', 'none')
 }
 
 function wonGame(actualChance) {
