@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  $('.loader-container').addClass('hidden')
+  $('#start-game').removeClass('hidden')
+})
+
 var username
 var lvlChances
 var lvl

@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background-image: url(../img/fondo.jpg);
   box-sizing: border-box;
   font-family: 'Neucha', cursive;
@@ -22,7 +23,7 @@ h1 {
 
 #start-game, #game, #results-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 6px auto 0;
   border: 12px solid black;
   border-radius: 15px;
   text-align: center;
